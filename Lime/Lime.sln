@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.181
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lime", "Lime\Lime.csproj", "{FE7654D1-2EB2-4EAE-9F28-ED92E149413C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{00527470-620D-4736-87FC-F288A8D97A3A}"
+	ProjectSection(SolutionItems) = preProject
+		Directory.Build.props = Directory.Build.props
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FE7654D1-2EB2-4EAE-9F28-ED92E149413C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE7654D1-2EB2-4EAE-9F28-ED92E149413C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE7654D1-2EB2-4EAE-9F28-ED92E149413C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE7654D1-2EB2-4EAE-9F28-ED92E149413C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {55F336CC-14C9-437C-82AA-DE1B6EBDC6F0}
+	EndGlobalSection
+EndGlobal
