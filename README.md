@@ -4,7 +4,7 @@ Lime Assignment to build a simple API for suggesting free meeting times
 
 To use the API they are two methods for the HTTP requests:
 
-1. GET => with URI extensin of api/values/meetings/
+1. GET => with URI start https://localhost:44316/api/values/meetings/
 
    The paremeters are passed on in the URI with a '/' in between
    
@@ -41,7 +41,7 @@ To use the API they are two methods for the HTTP requests:
         
         
         
-2. POST => with URI extension of api/values/meetings/
+2. POST => with URI start https://localhost:44316/api/values/meetings/
 
    The parameters are passed on in the body all in one array lik:
    
