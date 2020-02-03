@@ -20,7 +20,7 @@ namespace Lime.Controllers
         private System.IO.StreamReader file;
         private string[] stringArray;
         private string earliestDate, latestDate, hours, extracted = "";
-        private DateTime eDate, lDate, t, tempStart, tempEnd;
+        private DateTime eDate, t, lDate, tempStart, tempEnd;
         private CalendarEntry tempCalendarEntry;
         private List<CalendarEntry> finalList;
         private List<Employee> finalEmployeeList;
@@ -236,7 +236,7 @@ namespace Lime.Controllers
                 //eHours & lHours are opening hours
                 while (t <= c.BeginMeeting && t <= new DateTime(t.Year, t.Month, t.Day, lHour, 00, 00) && eDate.Hour >= eHour)
                 {
-                    CalendarEntry newEntry = new CalendarEntry { BeginMeeting = eDate, EndMeeting = t };
+                    CalendarEntry newEntry = new CalendarEntry { BeginMeeting = eDate, EndMeeting = t};
                     if (moreIDs)
                     {
                         if (CalendarEntry.Contains(newEntry, finalList))
@@ -250,7 +250,6 @@ namespace Lime.Controllers
 
                     if (t > c.BeginMeeting)
                     {
-                        System.Diagnostics.Debug.WriteLine("nuvarande next: " + c.BeginMeeting);
                         eDate = c.EndMeeting;
                         t = eDate.AddMinutes(length);
                         if (i != (list.Count - 1))
@@ -284,6 +283,7 @@ namespace Lime.Controllers
                                 }
                                 else
                                     newList.Add(newEntry);
+
 
                                 eDate = t;
                                 t = eDate.AddMinutes(length);
@@ -356,8 +356,6 @@ namespace Lime.Controllers
                 if (!extractedID.Equals("") && !extractedID.Equals(" "))
                 {
                     extractedID = extractedID.Substring(0, extractedID.IndexOf(';'));
-                    System.Diagnostics.Debug.WriteLine("extracted: " + extractedID);
-                    System.Diagnostics.Debug.WriteLine("Id in: " + id);
                     if (value = (extractedID.Equals(id)))
                         break;
                 }

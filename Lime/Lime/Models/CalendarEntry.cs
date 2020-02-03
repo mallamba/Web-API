@@ -5,7 +5,7 @@ using System.Web;
 
 namespace Lime.Models
 {
-    public class CalendarEntry
+    public  class CalendarEntry
     {
         public DateTime BeginMeeting { get; set; }
 
