@@ -192,7 +192,7 @@ namespace Lime.Controllers
                 }
             }
             file.Close();
- 
+
             if (employee.Name == null)
                 employee.Name = "ID NOT FOUND IN REGISTER";
             finalEmployeeList.Add(employee);
@@ -234,9 +234,15 @@ namespace Lime.Controllers
 
                 t = eDate.AddMinutes(length);
                 //eHours & lHours are opening hours
+
                 while (t <= c.BeginMeeting && t <= new DateTime(t.Year, t.Month, t.Day, lHour, 00, 00) && eDate.Hour >= eHour)
                 {
-                    CalendarEntry newEntry = new CalendarEntry { BeginMeeting = eDate, EndMeeting = t};
+                    CalendarEntry newEntry = new CalendarEntry { BeginMeeting = eDate, EndMeeting = t };
+                    while (t.Hour >= lHour)
+                        t = t.AddMinutes(30);
+                    while (t.Hour < eHour)
+                        t = t.AddMinutes(60);
+
                     if (moreIDs)
                     {
                         if (CalendarEntry.Contains(newEntry, finalList))
@@ -245,12 +251,12 @@ namespace Lime.Controllers
                     else
                         newList.Add(newEntry);
 
-                    eDate = t;
-                    t = eDate.AddMinutes(length);
+                    t = t.AddMinutes(length);
+                    eDate = t.AddMinutes(-length);
 
                     if (t > c.BeginMeeting)
                     {
-                        eDate = c.EndMeeting;
+                        eDate = c.EndMeeting.Value;
                         t = eDate.AddMinutes(length);
                         if (i != (list.Count - 1))
                         {
@@ -284,16 +290,11 @@ namespace Lime.Controllers
                                 else
                                     newList.Add(newEntry);
 
-
                                 eDate = t;
                                 t = eDate.AddMinutes(length);
                             }
                         }
                     }
-                    while (t.Hour >= lHour)
-                        t = t.AddMinutes(30);
-                    while (t.Hour < eHour)
-                        t = t.AddMinutes(60);
                 }
             }
             return newList;

@@ -7,9 +7,9 @@ namespace Lime.Models
 {
     public  class CalendarEntry
     {
-        public DateTime BeginMeeting { get; set; }
+        public DateTime? BeginMeeting { get; set; }
 
-        public DateTime EndMeeting { get; set; }
+        public DateTime? EndMeeting { get; set; }
 
         public static bool Contains(CalendarEntry c, List<CalendarEntry> l)
         {
